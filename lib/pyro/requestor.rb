@@ -3,7 +3,8 @@ module TinderPyro
     include HTTParty
 
     base_uri 'https://api.gotinder.com'
-
+    attr_accessor :auth_token
+    
     def auth_request(facebook_id, facebook_token)
       post_request(
         :auth,
