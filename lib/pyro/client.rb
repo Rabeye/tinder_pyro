@@ -41,7 +41,11 @@ module TinderPyro
     def sign_in(facebook_id, facebook_token)
       @requestor.auth_request(facebook_id, facebook_token)
     end
-
+    
+    def set_auth_token(tinder_auth_token)
+      @requestor.auth_token = tinder_auth_token
+    end
+    
     def update_location(latitude, longitude)
       @requestor.post_request("user/ping", lat: latitude, lon: longitude)
     end
